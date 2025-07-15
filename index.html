@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yahuza Yunus Musa</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background: black;
+    }
+    canvas#matrix-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    #container {
+      position: relative;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body class="text-white dark:bg-black dark:text-white bg-white text-black transition duration-500">
+
+<canvas id="matrix-bg"></canvas>
+
+<!-- Dark Mode Toggle -->
+<div class="w-full flex justify-end px-8 py-4">
+  <button onclick="toggleDarkMode()" class="bg-gray-800 text-white px-4 py-2 rounded-md">Toggle Dark Mode</button>
+</div>
+
+<div id="container" class="border-2 border-stone-200 m-4 md:m-8 flex flex-col items-center rounded-xl p-6 md:p-7 shadow-md bg-white dark:bg-black bg-opacity-10 backdrop-blur-sm">
+  <!-- Profile Picture -->
+  <div class="rounded-full" data-aos="zoom-in">
+    <img class="w-40 h-40 mb-4 border-2 border-blue-500 rounded-full object-cover" src="ethical_hacker.jpg" alt="profile picture">
+  </div>
+
+  <!-- Name & Title -->
+  <div class="text-center" data-aos="fade-up">
+    <h2 class="text-4xl font-bold">YAHUZA YUNUS MUSA</h2>
+    <h4 class="text-lg font-semibold text-blue-400 mt-1">ETHICAL HACKER</h4>
+  </div>
+
+  <!-- Bio -->
+  <div class="mt-5 max-w-3xl text-center text-stone-300" data-aos="fade-up" data-aos-delay="100">
+    <p>
+      I’m an ethical hacker with a passion for cybersecurity and digital defense. I break things to build them better—exploring systems, identifying vulnerabilities, and helping organizations patch them before real threats strike. With a solid foundation in networking, programming, and penetration testing, I stay one step ahead of cybercriminals—always hacking with integrity and purpose.
+    </p>
+  </div>
+
+  <!-- Favorite Websites -->
+  <div class="mt-10 w-full max-w-md">
+    <h4 class="text-center font-bold mb-2" data-aos="fade-up">Learning & Practice</h4>
+    <div class="grid gap-2" data-aos="fade-right">
+      <a href="https://tryhackme.com" class="block border-2 border-gray-300 rounded-md p-2 text-center bg-black bg-opacity-30">TryHackMe</a>
+      <a href="https://www.hackthebox.com/" class="block border-2 border-gray-300 rounded-md p-2 text-center bg-black bg-opacity-30">Hack The Box</a>
+    </div>
+
+    <h4 class="text-center font-bold mt-6 mb-2" data-aos="fade-up">Tools & Community</h4>
+    <div class="grid gap-2" data-aos="fade-left">
+      <a href="https://github.com" class="block border-2 border-gray-300 rounded-md p-2 text-center bg-black bg-opacity-30">GitHub</a>
+      <a href="https://stackoverflow.com" class="block border-2 border-gray-300 rounded-md p-2 text-center bg-black bg-opacity-30">Stack Overflow</a>
+    </div>
+
+    <h4 class="text-center font-bold mt-6 mb-2" data-aos="fade-up">News & Blogs</h4>
+    <div class="grid gap-2" data-aos="fade-right">
+      <a href="https://thehackernews.com" class="block border-2 border-gray-300 rounded-md p-2 text-center bg-black bg-opacity-30">The Hacker News</a>
+      <a href="https://daily.dev/blog" class="block border-2 border-gray-300 rounded-md p-2 text-center bg-black bg-opacity-30">Daily.dev</a>
+    </div>
+  </div>
+
+  <!-- Skills Table -->
+  <div class="rounded-md mt-10 border-gray-300 w-full max-w-md" data-aos="zoom-in">
+    <h2 class="text-center font-bold mb-2">My Skills</h2>
+    <table class="w-full text-center border-collapse border border-gray-300">
+      <tr>
+        <th class="border border-gray-300 p-2">Skill</th>
+        <th class="border border-gray-300 p-2">Proficiency</th>
+      </tr>
+      <tr>
+        <td class="border border-gray-300 p-2">Python</td>
+        <td class="border border-gray-300 p-2">Intermediate</td>
+      </tr>
+      <tr>
+        <td class="border border-gray-300 p-2">Linux</td>
+        <td class="border border-gray-300 p-2">Advanced</td>
+      </tr>
+      <tr>
+        <td class="border border-gray-300 p-2">Network Security</td>
+        <td class="border border-gray-300 p-2">Intermediate</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Contact Form -->
+  <div class="w-full max-w-md mt-10" data-aos="fade-up">
+    <div class="text-center font-bold mb-4">
+      <h4>Contact Me</h4>
+    </div>
+    <div class="grid gap-4">
+      <input type="text" placeholder="Your Name" class="border-2 border-stone-300 p-2 outline-none rounded-md text-black" />
+      <input type="email" placeholder="Your Email" class="border-2 border-stone-300 p-2 outline-none rounded-md text-black" />
+      <textarea placeholder="Your Message" class="border-2 border-stone-300 p-2 outline-none rounded-md resize-none h-32 text-black"></textarea>
+      <button class="bg-blue-500 text-white p-3 rounded-md font-bold cursor-pointer" type="submit">Send</button>
+    </div>
+  </div>
+</div>
+
+<!-- Matrix JS Effect -->
+<script>
+  const canvas = document.getElementById('matrix-bg');
+  const ctx = canvas.getContext('2d');
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+  let chars = '01'.split('');
+  let fontSize = 14;
+  let columns = canvas.width / fontSize;
+  let drops = [];
+  for (let x = 0; x < columns; x++) drops[x] = 1;
+  function draw() {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#0F0';
+    ctx.font = fontSize + 'px monospace';
+    for (let i = 0; i < drops.length; i++) {
+      let text = chars[Math.floor(Math.random() * chars.length)];
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+      drops[i]++;
+    }
+  }
+  setInterval(draw, 33);
+</script>
+
+<!-- Dark Mode Toggle Script -->
+<script>
+  function toggleDarkMode() {
+    document.documentElement.classList.toggle('dark');
+  }
+</script>
+
+<!-- AOS scroll animation -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+</body>
+</html>
